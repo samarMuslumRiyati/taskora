@@ -97,5 +97,9 @@ class ColorManager {
   static const greyDark8Color = Color(0xFF3B3B3B);
 
 
+  // profile colors
+  static const pruple = Color(0xFF615FDE);
+
+
 
 }

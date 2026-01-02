@@ -18,5 +18,17 @@ class IconPath {
   static const arrow = 'assets/icons/arrow.svg';
   static const email = 'assets/icons/email.svg';
 
+  // App Status Badge icons
+  static const checkmark = 'assets/icons/checkmark.svg';
+
+  // Profile texts
+    static const clock = 'assets/icons/clock.svg';
+
+
+    // App Bar icons
+static const notification ='assets/icons/notification.svg';
+  static const listsProfile  ='assets/icons/listsProfile.svg';
+
+
 
 }

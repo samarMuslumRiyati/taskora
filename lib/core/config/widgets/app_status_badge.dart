@@ -39,7 +39,7 @@ class AppStatusBadge extends StatelessWidget {
           Column(
 
             mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
+           // mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Align(
                 alignment: Alignment.topRight,
@@ -48,6 +48,7 @@ class AppStatusBadge extends StatelessWidget {
                   width: 69,
                   height: 46,
                   decoration: BoxDecoration(
+
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,

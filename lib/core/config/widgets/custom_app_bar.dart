@@ -4,15 +4,16 @@ import 'package:taskora/core/config/constants/app_sizes.dart';
 import 'package:taskora/core/config/constants/color_manager.dart';
 import 'package:taskora/core/config/extensions/layout_extension.dart';
 
+import '../constants/app_strings.dart';
+
 class CustomAppBar extends StatelessWidget {
 
-
+final String userName;
   final String image;
-  final String title;
 
   final String icon1;
   final String icon2;
-  const CustomAppBar({super.key, required this.image, required this.title, required this.icon1, required this.icon2});
+  const CustomAppBar({super.key, required this.image, required this.icon1, required this.icon2, required this.userName});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
           minRadius: 36,
           child: Image.asset(image),
         ),
-        title: Text(title),
+        title: Text('${AppStrings.hello} $userName'),
         titleTextStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
           fontWeight: FontWeight.w500,
           color: ColorManager.textDarkBlue

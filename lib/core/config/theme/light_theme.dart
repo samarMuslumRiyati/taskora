@@ -174,7 +174,7 @@ final ThemeData lightTheme = ThemeData(
 
     // XL Light
     titleMedium: TextStyle(
-      fontSize: 17,
+      fontSize: 16,
 
       fontWeight: FontWeight.w300,
     ),

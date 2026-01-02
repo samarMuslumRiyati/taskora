@@ -23,7 +23,6 @@ class AppTextField extends StatelessWidget {
           decoration: InputDecoration(
             hintText:hintText ,
             prefixIcon: SvgPicture.asset(prefixIcon).padStart(),
-
           ),
 
 

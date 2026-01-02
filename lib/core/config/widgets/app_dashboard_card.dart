@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:taskora/core/config/constants/color_manager.dart';
 import 'package:taskora/core/config/widgets/app_custom_card.dart';
-
 
 class AppDashboardCard extends StatelessWidget {
   final String text;
@@ -10,8 +10,18 @@ class AppDashboardCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-    AppCustomCard(height: 49, width: 326,  color: color,child: Text(text));
-    
+    return AppCustomCard(
+      height: 49,
+      width: 326,
+      color: color,
+      child: Center(
+        child: Text(
+          text,
+          style: Theme.of(
+            context,
+          ).textTheme.titleMedium!.copyWith(color: ColorManager.textLight),
+        ),
+      ),
+    );
   }
 }

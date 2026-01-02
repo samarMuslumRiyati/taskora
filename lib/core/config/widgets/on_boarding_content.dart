@@ -15,14 +15,14 @@ class OnboardingContent extends StatelessWidget {
   final String onBoardingText1;
   final String onBoardingText2;
   final VoidCallback onPressed;
-  final bool icon;
+  final bool iconExist;
 
   const OnboardingContent({
     super.key,
     required this.onBoardingImg,
     required this.onBoardingText1,
     required this.onBoardingText2,
-    required this.onPressed, required this.icon,
+    required this.onPressed, required this.iconExist,
 
   });
 
@@ -66,7 +66,7 @@ class OnboardingContent extends StatelessWidget {
           ),
         ).padBottom(24),
 
-        if (icon)
+        if (iconExist)
           AppIconElevatedButton(
             text: AppStrings.next,
             onPressed: onPressed,

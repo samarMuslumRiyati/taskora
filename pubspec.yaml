@@ -54,5 +54,11 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/icons/checkmark.svg
+    - assets/icons/clock.svg
+    - assets/icons/listsProfile.svg
+    - assets/icons/notification.svg
     - assets/images/
+    - assets/images/onBoadringImage.png
+    - assets/images/profilePic.png
 
