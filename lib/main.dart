@@ -1,122 +1,76 @@
 import 'package:flutter/material.dart';
+import 'package:taskora/core/config/constants/app_strings.dart';
+import 'package:taskora/core/config/constants/color_manager.dart';
+import 'package:taskora/core/config/extensions/sized_box_extention.dart';
+
+import 'core/config/constants/icon_path.dart';
+import 'core/config/constants/image_path.dart';
+import 'core/config/theme/light_theme.dart';
+import 'core/config/widgets/alret_dialog.dart';
+import 'core/config/widgets/app_dashboard_card.dart';
+import 'core/config/widgets/app_elevated_button.dart';
+import 'core/config/widgets/app_empty_state.dart';
+import 'core/config/widgets/app_floating_button.dart';
+import 'core/config/widgets/app_icon_elevated_button.dart';
+import 'core/config/widgets/app_logo.dart';
+import 'core/config/widgets/app_rich_text.dart';
+import 'core/config/widgets/app_snack_bar.dart';
+import 'core/config/widgets/app_status_badge.dart';
+import 'core/config/widgets/app_task_list_tile.dart';
+import 'core/config/widgets/app_text_field.dart';
+import 'core/config/widgets/custom_app_bar.dart';
+import 'core/config/widgets/custom_bottom_nav.dart';
+import 'core/config/widgets/custom_info_card.dart';
+import 'core/config/widgets/custom_text_button.dart';
+import 'core/config/widgets/on_boarding_content.dart';
+import 'core/config/widgets/profile_option_Item.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(taskora());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class taskora extends StatelessWidget {
+  const taskora({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      theme: lightTheme,
+      debugShowCheckedModeBanner: false,
+       home: Scaffold(
+         body: Center(
+           child: Column(
+             crossAxisAlignment: .center,
+             children: [
+               100.height,
+               AppElevatedButton(text: AppStrings.login, onPressed: () {  },),
+               AppIconElevatedButton(text: AppStrings.next, onPressed: (){}, icon: IconPath.arrow,),
+             AppTextField(hintText: '', prefixIcon: IconPath.email,),
+               AppLogo(),
+               AppRichText(textSpan1: AppStrings.doYouHaveAcc, textSpan2: AppStrings.doLogin,),
+               CustomTextButton(text: AppStrings.doYouForgetPassword,),
+                OnboardingContent(onBoardingImg: ImagePath.onBoadringImage,
+                 onBoardingText1: AppStrings.onboardingText1,
+                 onBoardingText2: AppStrings.onboardingText2, onPressed: () {  }, iconExist: false, ),
+             //  AppCustomCard(height: null, width: null, color: null, child: null,),
+             AppDashboardCard(text: AppStrings.successSnackbar, color: ColorManager.secondary,),
+              AppStatusBadge(title: AppStrings.projects, value: '12', icon: IconPath.checkmark,),
+              AppTaskListTile(title: AppStrings.designUI, subTitle: AppStrings.tradeApp, color: ColorManager.priority, trialingText: AppStrings.underImplementation,),
+               AppFloatingButton(),
+              // AppContainer(height: null, width: null, color: null, child: null,),
+               ProfileOptionItem(color: ColorManager.pruple, icon: IconPath.clock, text1: '\$8,500', text2: AppStrings.totalEarnings,),
+                CustomAppBar(image: ImagePath.profilePic, userName: 'هديل', icon1: IconPath.notification, icon2: IconPath.listsProfile,),
+               AppBottomNavBar(),
+              AppAlertDialog(),
+              CustomInfoCard(text1: AppStrings.createTask, text2: AppStrings.cancel,),
+               AppSnackBar(message: AppStrings.CongratesResetSuccessfully,),
+               AppEmptyState(image: ImagePath.noDataImage, text1: AppStrings.noDataYet, text2: AppStrings.willAppearDataWhenAdd, textButton: AppStrings.addNow,)
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
+             ],
+           ),
+         ),
+       ),
+      );
+  }}
 
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
