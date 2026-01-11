@@ -1,16 +1,13 @@
-# taskora
+# Taskora
 
-A new Flutter project.
+Taskora is a task and project management app that helps users organize their daily tasks and projects in one simple place.
 
-## Getting Started
+## What is Taskora?
+A productivity app that allows users to create, edit, and organize tasks into projects, with a clear home overview and user profile management.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Key Features
+- Task creation and editing
+- Project-based task organization
+- User authentication
+- Home dashboard overview
+- User profile management
